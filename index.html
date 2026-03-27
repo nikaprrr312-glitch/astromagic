@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ AstroMagic | Астрологический портал</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Звездное небо -->
+    <div class="stars" id="stars"></div>
+    <div id="shootingStars"></div>
+    
+    <!-- Облака -->
+    <div class="cloud" style="width: 300px; height: 100px; top: 10%; left: -300px; animation-duration: 25s;"></div>
+    <div class="cloud" style="width: 400px; height: 130px; top: 30%; left: -400px; animation-duration: 35s; animation-delay: -5s;"></div>
+    <div class="cloud" style="width: 250px; height: 80px; top: 70%; left: -250px; animation-duration: 30s; animation-delay: -10s;"></div>
+    <div class="cloud" style="width: 350px; height: 110px; top: 85%; left: -350px; animation-duration: 40s; animation-delay: -15s;"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>✨ AstroMagic ✨</h1>
+            <div class="subtitle">Откройте тайны своей судьбы</div>
+        </div>
+        
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <span>⚠️</span>
+            <span id="errorText"></span>
+        </div>
+        
+        <div id="formContainer" class="form-card">
+            <form id="astroForm">
+                <div class="form-group">
+                    <label for="search_type">🔮 Способ поиска</label>
+                    <select name="search_type" id="search_type" required>
+                        <option value="date">📅 По дате рождения</option>
+                        <option value="zodiac">⭐ По знаку зодиака</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="date_input">
+                    <label for="birth_date">🎂 Ваша дата рождения</label>
+                    <input type="date" name="birth_date" id="birth_date" value="1990-01-01">
+                </div>
+                
+                <div class="form-group" id="zodiac_input" style="display:none;">
+                    <label for="zodiac_sign">🌟 Выберите знак зодиака</label>
+                    <select name="zodiac_sign" id="zodiac_sign">
+                        <option value="овен">♈ Овен (21.03 - 19.04)</option>
+                        <option value="телец">♉ Телец (20.04 - 20.05)</option>
+                        <option value="близнецы">♊ Близнецы (21.05 - 20.06)</option>
+                        <option value="рак">♋ Рак (21.06 - 22.07)</option>
+                        <option value="лев">♌ Лев (23.07 - 22.08)</option>
+                        <option value="дева">♍ Дева (23.08 - 22.09)</option>
+                        <option value="весы">♎ Весы (23.09 - 22.10)</option>
+                        <option value="скорпион">♏ Скорпион (23.10 - 21.11)</option>
+                        <option value="стрелец">♐ Стрелец (22.11 - 21.12)</option>
+                        <option value="козерог">♑ Козерог (22.12 - 19.01)</option>
+                        <option value="водолей">♒ Водолей (20.01 - 18.02)</option>
+                        <option value="рыбы">♓ Рыбы (19.02 - 20.03)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="magic-button">
+                    ✨ Узнать факты ✨
+                </button>
+            </form>
+        </div>
+        
+        <div id="factsContainer" class="facts-container" style="display: none;">
+            <div class="facts-header">
+                <h2>📜 Ваши факты</h2>
+                <span style="font-size: 1.5rem;">✨</span>
+            </div>
+            <div class="facts-grid" id="factsGrid"></div>
+            <div class="back-button">
+                <a href="#" id="backButton" class="back-link">
+                    ← Вернуться и узнать еще
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
