@@ -1,2 +1,0 @@
-# astromagic
-astromagic
